@@ -1,0 +1,7 @@
+Gumbel
+xx.x   = 10年確率時間雨量(Jackknife推定値)
+x.xxx  = SLSC
+
+GEV
+xx.x   = 10年確率時間雨量(Jackknife推定値)
+x.xxx  = SLSC
