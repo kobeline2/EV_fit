@@ -6,27 +6,27 @@ function [paramHat] = paramEstimateGumbel(d)
 % This function uses PWM. 
 % For Gumbel, MLE or PWM are recommended (c.f. エース水文学).
 
-% common values for parameter estimate
+% common values
 dMean = mean(d);
 % dStd     = std(d);
 GAMMA = 0.57721566490153286060651209008240243104215933593992;
 N     = length(d);
+di    = sort(d);
 
 % MLE(極値統計学（高橋）p.)
 
 
 % PWM(極値統計学（高橋）p.110)
-di     = sort(d);
 alpha0 = dMean;
 % alpha1 = sum((1:N-1) .* di(2:end)) / N / N-1;
-alpha1 = sum(((1:N) - 0.35) .* di(1:end)) / N^2;
+alpha1 = sum(((1:N) - 0.35) .* di) / N^2;
 sigmaHat   = (2*alpha1 - alpha0) / log(2); 
 if sigmaHat < 0; sigmaHat = NaN; end % sigma must be positive.
 muHat      = alpha0 - GAMMA*sigmaHat;       
 paramHat   = [muHat, sigmaHat];
 
     
-% plot
+% % plot
 % mu = paramHat(1);
 % sigma = paramHat(2);
 % p = @(x) exp(-(x-mu)/sigma - exp(-(x-mu)/sigma)) / sigma;
