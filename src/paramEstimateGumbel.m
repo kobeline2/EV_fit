@@ -7,6 +7,7 @@ function [paramHat] = paramEstimateGumbel(d)
 % For Gumbel, MLE or PWM are recommended (c.f. エース水文学).
 
 % common values
+d     = reshape(d, 1, []);
 dMean = mean(d);
 % dStd     = std(d);
 GAMMA = 0.57721566490153286060651209008240243104215933593992;

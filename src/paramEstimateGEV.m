@@ -8,6 +8,7 @@ function [paramHat] = paramEstimateGEV(d)
 % For GEV, PWM are recommended (c.f. エース水文学).
 
 % common values
+d     = reshape(d, 1, []);
 dMean = mean(d);
 N     = length(d);
 di    = sort(d);
