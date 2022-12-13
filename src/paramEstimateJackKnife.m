@@ -6,6 +6,9 @@ function [paramHat] = paramEstimateJackKnife(d, type)
 % 2:Frechet, params = [mu, sigma], 
 % 3:Weibull, params = [mu, sigma], 
 
+% [ref]
+% 『水文学水工計画学』p.317
+
 N = length(d);
 paramAll = paramEstimate4extremeValue(d, type);
 paramLOO = zeros(N, length(paramAll));

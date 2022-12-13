@@ -16,7 +16,7 @@ switch type
     case 3
          error('Weibull is not supported yet')
     otherwise
-        error('Unsupported distribution')
+         error('Unsupported distribution')
 end
 
 end
