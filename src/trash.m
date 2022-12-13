@@ -1,6 +1,7 @@
-d = readmatrix('../data/input_sample.txt');
-d = d(:, 1);
-
+p = extremeValueFuncs(1, [0, 1], 'cdf', 1);
+z = -3:0.05:5;
+y = p(z);
+plot(z, y)
 %% sample data
 d = randn(365, 100);
 d = max(d);

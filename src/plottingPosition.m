@@ -5,10 +5,12 @@ function p = plottingPosition(N, alpha)
 % 0    :Weibull
 % 0.5  :Hazen
 % 0.44 :Gringorten
-% 0.375:Blom, 
+% 0.375:Blom
 % 0.4  :Cunnane(default)
 % 0.25 :Adamowski
-% 
+% Example
+% p = plottingPosition(length(data));
+% scatter(sort(data), p)
 
 if ~exist('alpha', 'var'), alpha = 0.4; end
 p = ((1:N)-alpha) / (N+1-2*alpha);
